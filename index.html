@@ -6,12 +6,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bom Barato e Rápido</title>
+
+    <style>
+        /* Style para o corpo do documento */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-image: linear-gradient(to right top, #f0f0f0, #e4e2f0, #d8d5f0, #cbc8f0, #bdbbf0);
+            color: #101731;
+            height: 100vh !important;
+        }
+
+        /* Style padrão para todos o type checkbox */
+        input[type="checkbox"] {
+            position: relative;
+            top: 40px;
+            width: 72px;
+            height: 26px;
+            opacity: 0;
+        }
+
+        /* Ajustando os textos nas labels */
+        input[type="checkbox"]+label {
+            display: block;
+            position: relative;
+            color: #9B9B9B;
+            transition: all .5s ease;
+        }
+
+        /* modificando as cores do textos nas labels quando checked */
+        input[type="checkbox"]:checked+label {
+            color: #062620;
+            transition: all .5s ease;
+        }
+
+        /* Padronizando as cores do fundo do Toggle Switch quando nao estiver checked */
+        input[type="checkbox"]+label:before {
+            content: '';
+            display: inline-block;
+            width: 86px;
+            vertical-align: middle;
+            height: 45px;
+            background-color: #9B9B9B;
+            border-radius: 1em;
+            margin-right: 20px;
+            margin-top: -2px;
+            transition: all .5s ease;
+        }
+
+        /* Padronizando as cores do fundo do circulo Toggle Switch quando nao estiver checked */
+        input[type="checkbox"]+label:after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #CFCFCF;
+            border-radius: 50%;
+            position: absolute;
+            left: 3px;
+            transition: all .5s ease;
+            -webkit-box-shadow: 0px 7px 10px 0px rgba(149, 149, 149, 0.46);
+            -moz-box-shadow: 0px 7px 10px 0px rgba(149, 149, 149, 0.46);
+            box-shadow: 0px 7px 10px 0px rgba(149, 149, 149, 0.46);
+        }
+
+        /* Cor do fundo do Toggle Switch quando checked item: Bom */
+        input[type="checkbox"]:checked+label.rosa:before {
+            background: #DB668D;
+            -webkit-box-shadow: 0px 7px 10px 0px rgba(219, 102, 141, 0.46);
+            -moz-box-shadow: 0px 7px 10px 0px rgba(219, 102, 141, 0.46);
+            box-shadow: 0px 7px 10px 0px rgba(219, 102, 141, 0.46);
+        }
+
+        /* Cor do circulo Toggle Switch quando checked item: Bom */
+        input[type="checkbox"]:checked+label.rosa:after {
+            background: #FF75A0;
+            transform: translateX(100%);
+        }
+
+        /* Cor do fundo do Toggle Switch quando checked item: Barato */
+        input[type="checkbox"]:checked+label.amarelo:before {
+            background: #F3B64B;
+            -webkit-box-shadow: 0px 7px 10px 0px rgba(243, 182, 75, 0.46);
+            -moz-box-shadow: 0px 7px 10px 0px rgba(243, 182, 75, 0.46);
+            box-shadow: 0px 7px 10px 0px rgba(243, 182, 75, 0.46);
+        }
+
+        /* Cor do circulo Toggle Switch quando checked item: Barato */
+        input[type="checkbox"]:checked+label.amarelo:after {
+            background: #FFC744;
+            transform: translateX(100%);
+        }
+
+        /* Cor do fundo do Toggle Switch quando checked item: Rápido */
+        input[type="checkbox"]:checked+label.verde:before {
+            background: #3AB59C;
+            -webkit-box-shadow: 0px 7px 10px 0px rgba(58, 181, 156, 0.46);
+            -moz-box-shadow: 0px 7px 10px 0px rgba(58, 181, 156, 0.46);
+            box-shadow: 0px 7px 10px 0px rgba(58, 181, 156, 0.46);
+        }
+
+        /* Cor do circulo Toggle Switch quando checked item: Rápido */
+        input[type="checkbox"]:checked+label.verde:after {
+            background: #3AD0AD;
+            transform: translateX(100%);
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- Iniciando Container com os Checkbox -->
-    <div class="container">
+    <div>
 
         <!-- Checkbox Bom -->
         <input type="checkbox" id="bom">
