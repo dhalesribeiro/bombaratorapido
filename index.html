@@ -27,6 +27,30 @@
 
     </div>
 
+
+    <script>
+
+        // Iniciando Script que nao deixa todos serem selecionados
+
+        let checked = []; // array que contem todos os itens selecionados
+
+        // navegando por todos os checkbox e agardado eles serem clicados
+        [].forEach.call(document.querySelectorAll('input[type="checkbox"]'), function (checkbox) {
+            checkbox.addEventListener('change', function (e) {
+
+                // se os checkbox receberem checked e o tamanho do array for identico a 2
+                if (checkbox.checked && checked.length === 2) {
+
+                    // escolhe um checkbox aleatoriamente e remove a opção checked
+                    let uncheckTarget = checked[Math.floor(Math.random() * checked.length)];
+                    uncheckTarget.checked = false;
+                }
+
+                // adiciona checked ao item que ficou fora do array
+                checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            });
+        });
+    </script>
 </body>
 
 </html>
